@@ -52,6 +52,13 @@ function draw() {
   text("**Use arrow keys to move Hot Air Balloon!",40,40);
 }
 
+function writePosition(x,y){
+  database.ref("balloon/position").set({
+      "x":position.x + x,
+      "y":position.y + y
+  })
+  }
+
 function updateHeight(x,y){
   database.ref('balloon/height').set({
     'x': height.x + x ,
